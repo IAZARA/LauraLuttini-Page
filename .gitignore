@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+\n# Build output
+dist/
+.next/
+out/
+\n# Env files
+.env
+.env.*
+!*.example
+\n# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+\n# System
+.DS_Store
+Thumbs.db

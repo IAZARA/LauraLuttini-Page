@@ -1,0 +1,126 @@
+import React, { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+
+export default function About() {
+  const images = [
+    { src: '/Lau1.jpeg', alt: 'Laura Luttini (foto principal)' },
+    { src: '/LAU2.jpeg', alt: 'Laura Luttini en su estudio' },
+  ]
+  const [index, setIndex] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
+
+  const prev = () => setIndex((i) => (i - 1 + images.length) % images.length)
+  const next = () => setIndex((i) => (i + 1) % images.length)
+
+  // Auto-advance cada 4s, pausa en hover/focus
+  useEffect(() => {
+    const id = setInterval(() => {
+      if (!isHovered) setIndex((i) => (i + 1) % images.length)
+    }, 4000)
+    return () => clearInterval(id)
+  }, [isHovered])
+
+  return (
+    <section id="sobre-mi" className="py-16 md:py-24">
+      <div className="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 className="font-display text-2xl md:text-4xl font-bold">Sobre Laura</h2>
+          <p className="mt-4 text-ink-700">
+            Abogada y Contadora Pública, con más de 10 años de experiencia asesorando a personas y pymes en
+            temas legales y contables. Enfocada en brindar un servicio claro, empático y orientado a resultados. También
+            se especializa en peritaje contable y se encuentra inscripta como perito contable.
+          </p>
+          <ul className="mt-4 list-disc list-inside text-ink-700">
+            <li>Matrículas: CPACF | CPN</li>
+            <li>Zona: San Telmo (CABA)</li>
+            <li>Modalidad: presencial y online</li>
+          </ul>
+
+          <div className="mt-6">
+            <p className="text-sm text-ink-600 font-medium">Acreditaciones</p>
+            <div className="mt-2 flex items-center gap-4">
+              <img
+                src="/escudo-azul-web.png"
+                alt="Colegio Público de Abogados de la Capital Federal"
+                className="h-10 w-auto object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                src="/Logo-Esc-MPF_color.png"
+                alt="Ministerio Público Fiscal"
+                className="h-10 w-auto object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+        <motion.div
+          className="card p-6 bg-white/20 backdrop-blur-md border border-rose-50"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          whileHover={{ y: -4, scale: 1.01 }}
+          transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {/* Carrusel de dos fotos */}
+          <div className="relative w-full max-w-sm sm:max-w-md mx-auto">
+            {/* Contenedor cuadrado para ver la imagen completa */}
+            <div
+              className="relative w-full pt-[100%] overflow-hidden rounded-md shadow-pastel bg-transparent"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              onFocus={() => setIsHovered(true)}
+              onBlur={() => setIsHovered(false)}
+            >
+              <motion.img
+                key={images[index].src}
+                src={images[index].src}
+                alt={images[index].alt}
+                className="absolute inset-0 w-full h-full object-contain object-center"
+                loading="lazy"
+                decoding="async"
+                initial={{ opacity: 0.8, scale: 1.01 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
+              />
+
+              {/* Controles */}
+              <button
+                type="button"
+                aria-label="Anterior"
+                onClick={prev}
+                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white text-ink-900 shadow px-2 py-1"
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                aria-label="Siguiente"
+                onClick={next}
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white text-ink-900 shadow px-2 py-1"
+              >
+                ›
+              </button>
+            </div>
+
+            {/* Indicadores simples */}
+            <div className="mt-3 flex items-center justify-center gap-2">
+              {images.map((_, i) => (
+                <button
+                  key={i}
+                  aria-label={`Ver imagen ${i + 1}`}
+                  onClick={() => setIndex(i)}
+                  className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                    i === index ? 'bg-rose-400' : 'bg-rose-100 hover:bg-rose-200'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
