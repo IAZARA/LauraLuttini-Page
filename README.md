@@ -15,6 +15,27 @@ npm run build   # build producción
 npm run preview # servir build local
 ```
 
+## Deploy en Railway
+
+1) Conectá el repo en Railway (New Project → Deploy from GitHub).
+
+2) Railway usará Nixpacks (Node). No necesitás Dockerfile. Detecta:
+   - `build`: `npm run build`
+   - `start`: `npm start` (sirve `dist` con Vite Preview)
+
+3) Variables/puerto: Railway define `PORT` automáticamente. El script `start` usa `--port $PORT --host`.
+
+4) Primera vez: al crear el servicio, Railway hará el build y expondrá una URL.
+
+5) SPA/estáticos: las imágenes se sirven desde `public/`. Si agregás nuevas, colocarlas ahí.
+
+Comandos de verificación local (imitando Railway):
+
+```bash
+npm run build
+PORT=8080 npm start
+```
+
 ## Estructura
 
 - `src/components/` — componentes UI (Header, Hero, Services, WhyUs, About, Testimonials, FAQ, Contact, Footer, CTAWhatsApp, Seo, SchemaOrg, Toast)
@@ -74,4 +95,3 @@ Para integrar con servicios externos:
 
 - La imagen `public/og.jpg` es un placeholder. Reemplazá por un JPG 1200×630.
 - Este proyecto es mobile-first y responsive (≥360px, tablet, desktop).
-
