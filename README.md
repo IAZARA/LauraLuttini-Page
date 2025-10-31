@@ -54,13 +54,30 @@ PORT=8080 npm start
 - Validaciones cliente: email, teléfono (opcional), campos requeridos.
 - Anti-spam: honeypot `website`.
 - Toasts de éxito/error accesibles.
-- Mock de envío en `src/lib/sendForm.js` (simula latencia y éxito).
+- Envío real vía Formspree (configurable). Si no se configura, en `dev` usa mock; en `prod` arroja error.
 
-Para integrar con servicios externos:
+### Integración con Formspree (recomendada)
 
-- Formspree: reemplazar `sendForm` por `fetch('https://formspree.io/f/XXXX', {...})` con `body: JSON.stringify(values)`.
-- Netlify Forms: agregar `data-netlify="true"` y `name` al `<form>`, y enviar POST a `/` con `FormData`.
-- EmailJS: `emailjs.send('service_id', 'template_id', values, 'public_key')`.
+1) Creá un formulario en Formspree y copiá tu endpoint (p. ej. `https://formspree.io/f/abcdwxyz`).
+
+2) Configurá la variable de entorno en build-time:
+
+   - Local: crear `.env` desde `.env.example` y completar:
+
+     ```
+     VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/abcdwxyz
+     ```
+
+   - Railway: en el panel del servicio → Variables → agregar `VITE_FORMSPREE_ENDPOINT` con el valor de tu endpoint y redeploy.
+
+3) El código del submit está en `src/lib/sendForm.js` y lee el endpoint desde `src/lib/submitConfig.js`.
+
+4) Campos enviados: `nombre`, `email`, `telefono`, `tipo`, `mensaje` + metadatos (`_subject`, `_format`, `_gotcha`, `_source`).
+
+### Alternativas
+
+- Netlify Forms: agregar `data-netlify="true"` y `name` al `<form>`, y enviar POST a `/` con `FormData` (requiere hosting en Netlify).
+- EmailJS: `emailjs.send('service_id', 'template_id', values, 'public_key')` (exponer `public_key` en build-time).
 
 ## Accesibilidad
 

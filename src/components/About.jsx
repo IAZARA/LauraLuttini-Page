@@ -31,7 +31,7 @@ export default function About() {
             se especializa en peritaje contable y se encuentra inscripta como perito contable.
           </p>
           <ul className="mt-4 list-disc list-inside text-ink-700">
-            <li>Matrículas: CPACF | CPN</li>
+            <li>Matrículas: CPACF | CPCECABA</li>
             <li>Zona: San Telmo (CABA)</li>
             <li>Modalidad: presencial y online</li>
           </ul>
@@ -53,22 +53,29 @@ export default function About() {
                 loading="lazy"
                 decoding="async"
               />
+              <img
+                src="/logo-consejo.png"
+                alt="Consejo Profesional de Ciencias Económicas de la CABA (CPCECABA)"
+                className="h-10 w-auto object-contain"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </div>
         <motion.div
-          className="card p-6 bg-white/20 backdrop-blur-md border border-rose-50"
+          className=""
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           whileHover={{ y: -4, scale: 1.01 }}
           transition={{ type: 'spring', stiffness: 220, damping: 18 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          {/* Carrusel de dos fotos */}
-          <div className="relative w-full max-w-sm sm:max-w-md mx-auto">
+          {/* Carrusel de dos fotos (full-bleed dentro de la columna) */}
+          <div className="relative w-full max-w-full mx-auto">
             {/* Contenedor cuadrado para ver la imagen completa */}
             <div
-              className="relative w-full pt-[100%] overflow-hidden rounded-md shadow-pastel bg-transparent"
+              className="relative w-full pt-[66%]"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               onFocus={() => setIsHovered(true)}
@@ -78,31 +85,13 @@ export default function About() {
                 key={images[index].src}
                 src={images[index].src}
                 alt={images[index].alt}
-                className="absolute inset-0 w-full h-full object-contain object-center"
+                className="absolute inset-0 w-full h-full object-cover object-center rounded-lg"
                 loading="lazy"
                 decoding="async"
                 initial={{ opacity: 0.8, scale: 1.01 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.35, ease: 'easeOut' }}
               />
-
-              {/* Controles */}
-              <button
-                type="button"
-                aria-label="Anterior"
-                onClick={prev}
-                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white text-ink-900 shadow px-2 py-1"
-              >
-                ‹
-              </button>
-              <button
-                type="button"
-                aria-label="Siguiente"
-                onClick={next}
-                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white text-ink-900 shadow px-2 py-1"
-              >
-                ›
-              </button>
             </div>
 
             {/* Indicadores simples */}
