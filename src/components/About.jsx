@@ -28,7 +28,7 @@ export default function About() {
           <p className="mt-4 text-ink-700">
             Abogada y Contadora Pública, con más de 10 años de experiencia asesorando a personas y pymes en
             temas legales y contables. Enfocada en brindar un servicio claro, empático y orientado a resultados. También
-            se especializa en peritaje contable y se encuentra inscripta como perito contable.
+            se especializa en peritaje contable.
           </p>
           <ul className="mt-4 list-disc list-inside text-ink-700">
             <li>Matrículas: CPACF | CPCECABA</li>
