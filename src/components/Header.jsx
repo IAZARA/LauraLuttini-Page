@@ -57,8 +57,21 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           <a href="#inicio" className="flex items-center gap-2 font-display text-lg md:text-xl font-semibold text-ink-900">
-            <img src="/iconoL-l.png" alt="" width="28" height="28" className="w-7 h-7 rounded-md object-contain" loading="eager" decoding="async" />
-            <span>Laura Luttini</span>
+            <img src="/iconoL-l.png" alt="" width="36" height="36" className="w-9 h-9 rounded-md object-contain" loading="eager" decoding="async" />
+            <span className="inline-flex flex-col items-center leading-tight">
+              <span
+                className="block"
+                style={{ fontFamily: "Garamond, Georgia, 'Times New Roman', serif" }}
+              >
+                Laura Luttini
+              </span>
+              <span
+                className="block text-[11px] md:text-xs text-ink-700"
+                style={{ fontFamily: "Garamond, Georgia, 'Times New Roman', serif" }}
+              >
+                & asociados
+              </span>
+            </span>
           </a>
           <nav className="hidden md:flex items-center" aria-label="Navegación principal">
             {navItem('#inicio', 'Inicio')}

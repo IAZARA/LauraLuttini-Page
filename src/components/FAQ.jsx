@@ -3,8 +3,7 @@ import React, { useState } from 'react'
 const faqs = [
   { q: '¿Cuáles son los plazos típicos?', a: 'Depende del tipo de trámite o proceso. Te orientamos desde el inicio con estimaciones realistas y te mantenemos al tanto de cada avance.' },
   { q: '¿Qué documentación necesito?', a: 'Al contactarnos, te pediremos lo esencial según tu caso (DNI, contratos, facturas, etc.). Si falta algo, te ayudamos a conseguirlo.' },
-  { q: '¿Qué medios de pago aceptan?', a: 'Transferencia, tarjeta (según caso), y planes para pymes. Emitimos comprobante oficial.' },
-  { q: '¿Atienden en modalidad online?', a: 'Sí, reuniones por videollamada y firma digital cuando aplica. También atendemos en CABA de forma presencial.' },
+  { q: '¿Atienden en modalidad online?', a: 'Si, reuniones por videollamada. Tambien atendemos de forma presencial' },
   { q: '¿La primera consulta tiene costo?', a: 'Ofrecemos una primera orientación breve sin costo por WhatsApp o email. Consultas en profundidad y seguimiento tienen honorarios accesibles.' },
   { q: '¿En cuánto tiempo responden?', a: 'Respondemos en el día hábil. Si es urgente, indicánoslo en el mensaje y priorizamos tu caso.' },
 ]

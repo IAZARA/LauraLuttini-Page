@@ -33,7 +33,7 @@ export default function Hero() {
       {/* Cartel superpuesto con transparencia para mantener el fondo visible */}
       <motion.img
         aria-hidden="true"
-        src="/EstudioLauraLuttini.png"
+        src="/EstudioLauraLuttini2.jpeg"
         alt="Estudio Laura Luttini"
         className="absolute inset-0 m-auto pointer-events-none z-20"
         style={{
@@ -42,9 +42,10 @@ export default function Hero() {
           height: 'auto'
         }}
         initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 12, scale: prefersReducedMotion ? 1 : 1.06 }}
-        animate={{ opacity: 0.6, y: 0, scale: 1 }}
+        animate={{ opacity: 0.9, y: 0, scale: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
       />
+      
 
       {/* Brillo diagonal sutil (una sola pasada) */}
       {!prefersReducedMotion && (
