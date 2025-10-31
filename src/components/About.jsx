@@ -3,8 +3,7 @@ import { motion } from 'framer-motion'
 
 export default function About() {
   const images = [
-    { src: '/Lau1.jpeg', alt: 'Laura Luttini (foto principal)' },
-    { src: '/LAU2.jpeg', alt: 'Laura Luttini en su estudio' },
+    { src: '/LAU2.jpeg', alt: 'Laura Luttini' },
   ]
   const [index, setIndex] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
@@ -14,6 +13,7 @@ export default function About() {
 
   // Auto-advance cada 4s, pausa en hover/focus
   useEffect(() => {
+    if (images.length < 2) return // sin carrusel si hay una sola imagen
     const id = setInterval(() => {
       if (!isHovered) setIndex((i) => (i + 1) % images.length)
     }, 4000)
@@ -94,19 +94,21 @@ export default function About() {
               />
             </div>
 
-            {/* Indicadores simples */}
-            <div className="mt-3 flex items-center justify-center gap-2">
-              {images.map((_, i) => (
-                <button
-                  key={i}
-                  aria-label={`Ver imagen ${i + 1}`}
-                  onClick={() => setIndex(i)}
-                  className={`h-2.5 w-2.5 rounded-full transition-colors ${
-                    i === index ? 'bg-rose-400' : 'bg-rose-100 hover:bg-rose-200'
-                  }`}
-                />
-              ))}
-            </div>
+            {/* Indicadores (solo si hay más de una imagen) */}
+            {images.length > 1 && (
+              <div className="mt-3 flex items-center justify-center gap-2">
+                {images.map((_, i) => (
+                  <button
+                    key={i}
+                    aria-label={`Ver imagen ${i + 1}`}
+                    onClick={() => setIndex(i)}
+                    className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                      i === index ? 'bg-rose-400' : 'bg-rose-100 hover:bg-rose-200'
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </motion.div>
       </div>

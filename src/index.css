@@ -3,12 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --rose-50:#fff5f7; --rose-100:#ffe9ee; --rose-200:#ffd3de;
-  --rose-300:#ffb8c9; /* principal pastel */
-  --rose-400:#ff9db6; --rose-600:#f06292; /* acento/hover */
+  /* Paleta neutra en grises claros (reemplaza la rosa) */
+  --rose-50:#f9fafb;   /* gray-50 */
+  --rose-100:#f3f4f6;  /* gray-100 */
+  --rose-200:#e5e7eb;  /* gray-200 */
+  --rose-300:#d1d5db;  /* gray-300 */
+  --rose-400:#9ca3af;  /* gray-400 (acento/ring) */
+  --rose-600:#4b5563;  /* gray-600 (iconos/énfasis discreto) */
+
+  /* Texto y superficies */
   --ink-900:#1f1f29;  --ink-700:#3b3b47; --ink-400:#8a8a98;
   --bg:#ffffff; --card:#ffffff;
-  --shadow:0 10px 30px rgba(249,168,212,.25);
+
+  /* Sombra neutra y suave */
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+
   --radius-xl:18px; --radius-md:12px;
 }
 
