@@ -14,7 +14,7 @@ export default function Footer() {
         >
           👍 Sitio realizado por Ivan Zarate
         </a>
-        <p className="justify-self-center">© {year} Estudio Jurídico-Contable Laura Luttini</p>
+        <p className="justify-self-center hidden sm:block">© {year} Estudio Jurídico-Contable Laura Luttini</p>
         {/* right column intentionally left empty for centering */}
       </div>
     </footer>
