@@ -36,11 +36,11 @@ const services = [
     ],
   },
   {
-    title: 'CERTIFICACIONES',
+    title: 'CERTIFICACIONES CONTABLES Y DECLARACIONES JURADAS',
     img: '/imagen_5.jpeg',
     teaser:
       'Certificaciones contables y legales para trámites bancarios, acreditación de fondos y cumplimiento regulatorio (UIF).',
-    modalIntro: 'Emitimos certificaciones con respaldo profesional para garantizar validez y trazabilidad documental.',
+    modalIntro: 'Certificación de Ingresos para trámites bancarios; Certificación Origen de Fondos; Declaración de ganancia; Declaración de Bienes Personales; Certificación de fondos lícitos (UIF), etc.',
     bullets: [
       'Certificación de ingresos para trámites bancarios',
       'Certificación de origen de fondos',
@@ -70,9 +70,9 @@ const services = [
     title: 'MONOTRIBUTISTAS',
     img: '/imagen4.jpg',
     teaser:
-      'Acompañamiento simple para monotributistas: altas, recategorizaciones y obligaciones al día con foco en claridad y previsibilidad.',
+      'Acompañamiento para monotributistas: altas, recategorizaciones y obligaciones al día con foco en claridad y previsibilidad.',
     modalIntro:
-      'Nos aseguramos de que mantengas al día tus obligaciones impositivas y te encuentres correctamente categorizado.',
+      'Te asesoramos para que mantengas al día tus obligaciones impositivas y te encuentres correctamente categorizado.',
     bullets: [
       'Inscripciones impositivas',
       'Liquidaciones mensual y anual de Ingresos Brutos',
@@ -99,7 +99,7 @@ const services = [
     title: 'DERECHO EMPRESARIAL, COMERCIAL, LABORAL Y TRIBUTARIO',
     img: '/imagen_6bis.png',
     teaser:
-      'Acompañamiento 360° a empresas y profesionales: societario, comercial, laboral e impositivo, con enfoque preventivo y estratégico.',
+      'Acompañamiento a empresas y profesionales: societario, comercial, laboral e impositivo, con enfoque preventivo y estratégico.',
     body: [
       'Brindamos asesoramiento integral a empresas y profesionales en materia comercial, societaria, laboral y tributaria.',
       'Intervenimos en conflictos judiciales y administrativos, defensas ante ARCA, fiscos provinciales y el Tribunal Fiscal de la Nación. Desarrollamos estrategias de planeamiento fiscal y contractual para optimizar la gestión empresarial y prevenir contingencias.'
