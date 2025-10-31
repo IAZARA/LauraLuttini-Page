@@ -6,7 +6,7 @@ export const BUSINESS = {
   nombre: 'Estudio Jurídico-Contable Laura Luttini',
   url: '/',
   image: '/og.jpg',
-  email: 'lauluttini@gmail.com',
+  email: 'estudioluttini@gmail.com',
   telefono: '+5491130333800',
   horario: 'Lunes a Viernes 9 a 18 hs',
   areaServida: 'San Telmo (CABA)',

@@ -39,8 +39,8 @@ const services = [
     title: 'CERTIFICACIONES CONTABLES Y DECLARACIONES JURADAS',
     img: '/imagen_5.jpeg',
     teaser:
-      'Certificaciones contables y legales para trámites bancarios, acreditación de fondos y cumplimiento regulatorio (UIF).',
-    modalIntro: 'Certificación de Ingresos para trámites bancarios; Certificación Origen de Fondos; Declaración de ganancia; Declaración de Bienes Personales; Certificación de fondos lícitos (UIF), etc.',
+      'Certificación de Ingresos para trámites bancarios; Certificación Origen de Fondos; Declaración de ganancia; Declaración de Bienes Personales; Certificación de fondos lícitos (UIF), etc',
+    modalIntro: '',
     bullets: [
       'Certificación de ingresos para trámites bancarios',
       'Certificación de origen de fondos',
