@@ -32,10 +32,19 @@ const services = [
     bullets: [
       'Confección del Formulario 572 (SIRADIG)',
       'Asesoramiento sobre deducciones del Impuesto a las Ganancias',
-      'DDJJ de Ganancias y Bienes Personales (informativas o determinativas)',
+      'DDJJ de Ganancias y Bienes Personales (informativas o determinativas)'
+    ],
+  },
+  {
+    title: 'CERTIFICACIONES',
+    img: '/imagen_5.jpeg',
+    teaser:
+      'Certificaciones contables y legales para trámites bancarios, acreditación de fondos y cumplimiento regulatorio (UIF).',
+    modalIntro: 'Emitimos certificaciones con respaldo profesional para garantizar validez y trazabilidad documental.',
+    bullets: [
       'Certificación de ingresos para trámites bancarios',
       'Certificación de origen de fondos',
-      'Certificación de fondos lícitos (UIF)',
+      'Certificación de fondos lícitos (UIF)'
     ],
   },
   {
@@ -74,6 +83,37 @@ const services = [
       'Otras liquidaciones impositivas y previsionales',
       'Gestión de comprobantes electrónicos',
       'Moratorias y planes de pago',
+    ],
+  },
+  {
+    title: 'DERECHO CIVIL Y PATRIMONIAL',
+    img: '/imagen_7.png',
+    teaser:
+      'Acciones y defensas en juicios civiles y patrimoniales. Contratos, sucesiones y recuperación de activos con enfoque práctico.',
+    body: [
+      'Asesoramos e intervenimos en juicios civiles y patrimoniales, incluyendo daños y perjuicios, cobro de sumas de dinero, sucesiones, recuperación de activos e inmuebles, y conflictos entre herederos.',
+      'También realizamos redacción y revisión de contratos, negociaciones, medidas cautelares y procesos urgentes, con una estrategia integral en los fueros civil, patrimonial y penal.'
+    ],
+  },
+  {
+    title: 'DERECHO EMPRESARIAL, COMERCIAL, LABORAL Y TRIBUTARIO',
+    img: '/imagen_6bis.png',
+    teaser:
+      'Acompañamiento 360° a empresas y profesionales: societario, comercial, laboral e impositivo, con enfoque preventivo y estratégico.',
+    body: [
+      'Brindamos asesoramiento integral a empresas y profesionales en materia comercial, societaria, laboral y tributaria.',
+      'Intervenimos en conflictos judiciales y administrativos, defensas ante ARCA, fiscos provinciales y el Tribunal Fiscal de la Nación. Desarrollamos estrategias de planeamiento fiscal y contractual para optimizar la gestión empresarial y prevenir contingencias.'
+    ],
+  },
+  {
+    title: 'DERECHO PENAL ECONÓMICO Y COMPLIANCE',
+    img: '/imagen_8.png',
+    teaser:
+      'Defensa y prevención en delitos económicos y financieros. Programas de compliance y PLA/FT a medida.',
+    body: [
+      'Actuamos en investigaciones y procesos penales vinculados a delitos económicos y financieros, tales como lavado de activos, evasión fiscal, administración fraudulenta, corrupción y delitos societarios.',
+      'Brindamos asesoramiento preventivo y defensa técnica en todas las etapas del proceso penal.',
+      'Desarrollamos e implementamos programas de compliance y prevención del lavado de activos (PLA/FT), adaptados a la normativa vigente y a las necesidades de cada organización. Nuestra intervención combina experiencia técnica contable, jurídica y forense, garantizando un enfoque integral y estratégico.'
     ],
   },
 ]
@@ -142,12 +182,19 @@ export default function Services() {
           {active !== null && (
             <div className="space-y-3">
               {services[active].modalIntro && <p>{services[active].modalIntro}</p>}
-              <p className="font-medium">Principales servicios brindados:</p>
-              <ul className="list-disc list-inside text-ink-700">
-                {services[active].bullets.map((b, idx) => (
-                  <li key={idx}>{b}</li>
-                ))}
-              </ul>
+              {Array.isArray(services[active].body) && services[active].body.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+              {Array.isArray(services[active].bullets) && services[active].bullets.length > 0 && (
+                <>
+                  <p className="font-medium">Principales servicios brindados:</p>
+                  <ul className="list-disc list-inside text-ink-700">
+                    {services[active].bullets.map((b, idx) => (
+                      <li key={idx}>{b}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
               <div className="pt-1">
                 <a href="#contacto" className="btn btn-primary text-sm" onClick={() => setActive(null)}>
                   Consultar ahora
