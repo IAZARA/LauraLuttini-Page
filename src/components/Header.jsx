@@ -10,6 +10,23 @@ function IconWhatsApp({ className = 'w-5 h-5' }) {
   )
 }
 
+function IconInstagram({ className = 'w-5 h-5' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm6-2.2a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0Z" />
+    </svg>
+  )
+}
+
+function IconMail({ className = 'w-5 h-5' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M3.75 5.5h16.5c.69 0 1.25.56 1.25 1.25v10.5c0 .69-.56 1.25-1.25 1.25H3.75c-.69 0-1.25-.56-1.25-1.25V6.75c0-.69.56-1.25 1.25-1.25Z" stroke="currentColor" strokeWidth="1.5"/>
+      <path d="m3 7 9 6 9-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [active, setActive] = useState('inicio')
@@ -80,19 +97,29 @@ export default function Header() {
             {navItem('#faq', 'FAQ')}
             {navItem('#contacto', 'Contacto')}
           </nav>
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1 sm:gap-2 md:gap-3">
+            <a
+              href="https://www.instagram.com/estudioluttini/"
+              onClick={() => trackEvent('instagram_icon_header')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-md bg-rose-300 text-ink-900 hover:bg-rose-400 focus-visible:ring-2 focus-visible:ring-rose-400"
+              aria-label="Ver Instagram @estudioluttini"
+            >
+              <IconInstagram />
+            </a>
             <a
               href="#contacto"
-              onClick={() => trackEvent('cta_agendar_header')}
-              className="btn btn-primary whitespace-nowrap px-3 py-2 text-xs sm:px-5 sm:py-3 sm:text-sm"
+              onClick={() => trackEvent('email_icon_header')}
+              className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-md bg-rose-300 text-ink-900 hover:bg-rose-400 focus-visible:ring-2 focus-visible:ring-rose-400"
+              aria-label="Ir al formulario de contacto"
             >
-              <span className="sm:hidden">Consultar</span>
-              <span className="hidden sm:inline">Agendar consulta</span>
+              <IconMail />
             </a>
             <a
               href={WHATSAPP_URL}
               onClick={() => trackEvent('whatsapp_icon_header')}
-              className="inline-flex items-center justify-center w-10 h-10 rounded-md bg-rose-300 text-ink-900 hover:bg-rose-400 focus-visible:ring-2 focus-visible:ring-rose-400"
+              className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-md bg-rose-300 text-ink-900 hover:bg-rose-400 focus-visible:ring-2 focus-visible:ring-rose-400"
               aria-label="Escribir por WhatsApp"
             >
               <IconWhatsApp />
