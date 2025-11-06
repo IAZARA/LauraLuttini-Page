@@ -153,7 +153,7 @@ export default function Contact() {
           </div>
           <div className="card p-5">
             <p className="text-ink-700 text-sm">
-              Atendemos en CABA. Nuestra dirección es <strong>{BUSINESS.address}</strong>. También brindamos atención en modalidad online.
+              Encontranos en nuestra oficina en <strong>{BUSINESS.address}</strong>.
             </p>
           </div>
           <div className="card p-0 overflow-hidden">
