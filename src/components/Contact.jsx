@@ -18,6 +18,11 @@ export default function Contact() {
   const [loading, setLoading] = useState(false)
   const [toast, setToast] = useState({ open: false, type: 'success', message: '' })
 
+  // Google Maps embed/link URLs basados en la dirección del negocio
+  const mapsQuery = encodeURIComponent(BUSINESS.address)
+  const MAPS_EMBED_URL = `https://www.google.com/maps?q=${mapsQuery}&output=embed`
+  const MAPS_LINK_URL = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`
+
   const onChange = (e) => {
     const { name, value } = e.target
     setForm((f) => ({ ...f, [name]: value }))
@@ -144,13 +149,34 @@ export default function Contact() {
               <li><strong>Email:</strong> {BUSINESS.email}</li>
               <li><strong>Tel:</strong> {BUSINESS.telefono}</li>
               <li><strong>Horario:</strong> {BUSINESS.horario}</li>
-              <li><strong>Zona:</strong> {BUSINESS.areaServida}</li>
             </ul>
           </div>
           <div className="card p-5">
             <p className="text-ink-700 text-sm">
-              Atendemos en CABA. Nos encontramos por <strong>San Telmo</strong> y también brindamos atención en modalidad online.
+              Atendemos en CABA. Nuestra dirección es <strong>{BUSINESS.address}</strong>. También brindamos atención en modalidad online.
             </p>
+          </div>
+          <div className="card p-0 overflow-hidden">
+            <iframe
+              src={MAPS_EMBED_URL}
+              title={`Mapa - ${BUSINESS.address}`}
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <div className="p-3 text-right">
+              <a
+                href={MAPS_LINK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-rose-600 hover:underline"
+              >
+                Ver en Google Maps
+              </a>
+            </div>
           </div>
         </aside>
 

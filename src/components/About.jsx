@@ -32,7 +32,7 @@ export default function About() {
           </p>
           <ul className="mt-4 list-disc list-inside text-ink-700">
             <li>Matrículas: CPACF | CPCECABA</li>
-            <li>Zona: San Telmo (CABA)</li>
+            <li>Zona: Puerto Madero (CABA)</li>
             <li>Modalidad: presencial y online</li>
           </ul>
 

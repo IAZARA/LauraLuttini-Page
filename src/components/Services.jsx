@@ -137,9 +137,9 @@ export default function Services() {
         <h2 className="font-display text-2xl md:text-4xl font-bold">Nuestros Servicios</h2>
 
         <motion.div
-          className="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 items-stretch"
+          className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 items-stretch"
           variants={container}
-          initial="hidden"
+          initial={false}
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
         >
